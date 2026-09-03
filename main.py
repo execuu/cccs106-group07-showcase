@@ -159,7 +159,7 @@ def main(page: ft.Page):
         nonlocal tasks_completed_count
         # Boundary Constraint: strictly cap at SPRINT_GOAL (maximum 5)
         if tasks_completed_count < SPRINT_GOAL:
-            tasks_completed_count += 1
+            tasks_completed_count += 2
             counter_label.value = f"Sprint Tasks Completed: {tasks_completed_count}"
             update_goal_progress()
             page.update()
@@ -167,7 +167,7 @@ def main(page: ft.Page):
     # [Developer 2 Handler]
     def handle_reset_counter(e):
         nonlocal tasks_completed_count
-        tasks_completed_count = 0
+        tasks_completed_count = 1
         counter_label.value = f"Sprint Tasks Completed: {tasks_completed_count}"
         update_goal_progress()
         page.update()
