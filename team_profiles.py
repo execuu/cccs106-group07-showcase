@@ -20,7 +20,9 @@ class TeamMember:
     github_handle: str
     avatar_icon: ft.IconData = ft.Icons.ACCOUNT_CIRCLE
     accent_color: str = ft.Colors.BLUE_700
-    photo_url: Optional[str] = None  # URL (e.g. GitHub avatar) or local path to student's photo
+    photo_url: Optional[str] = (
+        None  # URL (e.g. GitHub avatar) or local path to student's photo
+    )
 
 
 # ==============================================================================
@@ -41,14 +43,14 @@ def get_initial_team() -> List[TeamMember]:
         # (Add your photo URL e.g. "https://github.com/<username>.png" or local path)
         # ----------------------------------------------------------------------
         TeamMember(
-            student_id="[Dev 1] Student ID Here",  # example: "2024-10123"
-            full_name="[Dev 1] Student Name Here", # example: "Maria Clara Santos"
+            student_id="2411274",  # example: "2024-10123"
+            full_name="John Benedict A. Martinez",  # example: "Maria Clara Santos"
             role="Lead Frontend UI Developer",
             specialization="Flet Reactive Widgets & Material 3 Layouts",
-            github_handle="@dev1-github",          # example: "@mariaclara-cspc"
+            github_handle="@execuu",  # example: "@mariaclara-cspc"
             avatar_icon=ft.Icons.PALETTE,
             accent_color=ft.Colors.TEAL_700,
-            photo_url="/dev1.jpg",                 # Photo: local asset or URL (e.g. "https://github.com/dev1-github.png")
+            photo_url="None",  # Photo: local asset or URL (e.g. "https://github.com/dev1-github.png")
         ),
         # ----------------------------------------------------------------------
         # TODO: [DEVELOPER 2 TASK] - Branch: feature/dev2-state
@@ -56,13 +58,13 @@ def get_initial_team() -> List[TeamMember]:
         # ----------------------------------------------------------------------
         TeamMember(
             student_id="[Dev 2] Student ID Here",  # example: "2024-10456"
-            full_name="[Dev 2] Student Name Here", # example: "Juan Dela Cruz"
+            full_name="[Dev 2] Student Name Here",  # example: "Juan Dela Cruz"
             role="Backend & State Engineer",
             specialization="State Mutation & Event Handlers",
-            github_handle="@dev2-github",          # example: "@jdelacruz-cspc"
+            github_handle="@dev2-github",  # example: "@jdelacruz-cspc"
             avatar_icon=ft.Icons.DATA_OBJECT,
             accent_color=ft.Colors.AMBER_800,
-            photo_url="/dev2.jpg",                 # Photo: local asset or URL (e.g. "https://github.com/dev2-github.png")
+            photo_url="/dev2.jpg",  # Photo: local asset or URL (e.g. "https://github.com/dev2-github.png")
         ),
         # ----------------------------------------------------------------------
         # TODO: [DEVELOPER 3 TASK] - Branch: feature/dev3-features
@@ -70,13 +72,13 @@ def get_initial_team() -> List[TeamMember]:
         # ----------------------------------------------------------------------
         TeamMember(
             student_id="[Dev 3] Student ID Here",  # example: "2024-10789"
-            full_name="[Dev 3] Student Name Here", # example: "Angelo Reyes"
+            full_name="[Dev 3] Student Name Here",  # example: "Angelo Reyes"
             role="QA & Feature Engineer",
             specialization="Testing Diagnostics, Theme Engine & Controls",
-            github_handle="@dev3-github",          # example: "@areyes-cspc"
+            github_handle="@dev3-github",  # example: "@areyes-cspc"
             avatar_icon=ft.Icons.BUG_REPORT,
             accent_color=ft.Colors.INDIGO_700,
-            photo_url="/dev3.jpg",                 # Photo: local asset or URL (e.g. "https://github.com/dev3-github.png")
+            photo_url="/dev3.jpg",  # Photo: local asset or URL (e.g. "https://github.com/dev3-github.png")
         ),
     ]
     return members
@@ -96,7 +98,9 @@ def build_profile_card(member: TeamMember) -> ft.Container:
                 fit=ft.BoxFit.COVER,
                 border_radius=26,
                 error_content=ft.Container(
-                    content=ft.Icon(member.avatar_icon, size=26, color=member.accent_color),
+                    content=ft.Icon(
+                        member.avatar_icon, size=26, color=member.accent_color
+                    ),
                     alignment=ft.Alignment.CENTER,
                 ),
             ),
@@ -149,7 +153,9 @@ def build_profile_card(member: TeamMember) -> ft.Container:
                                         weight=ft.FontWeight.W_600,
                                         color=member.accent_color,
                                     ),
-                                    padding=ft.Padding.symmetric(horizontal=6, vertical=2),
+                                    padding=ft.Padding.symmetric(
+                                        horizontal=6, vertical=2
+                                    ),
                                     border=ft.Border.all(1, member.accent_color),
                                     border_radius=6,
                                 ),
@@ -169,7 +175,9 @@ def build_profile_card(member: TeamMember) -> ft.Container:
                         ),
                         ft.Row(
                             controls=[
-                                ft.Icon(ft.Icons.CODE, size=14, color=ft.Colors.GREY_600),
+                                ft.Icon(
+                                    ft.Icons.CODE, size=14, color=ft.Colors.GREY_600
+                                ),
                                 ft.Text(
                                     member.github_handle,
                                     size=11,
